@@ -25,6 +25,15 @@ export default function StudentPage() {
                             <Form.Label for="Ln">Last Name</Form.Label>
                             <Form.Control type="text" placeholder="Last name" />
                         </Form.Group>
+                        <Form.Group as={Col} controlId="birthdate">
+                            <Form.Label for="birthdate">Date of birth</Form.Label>
+                            <Form.Control type="date" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="gender">
+                            <Form.Label>Gender</Form.Label>
+                            <Form.Check type="radio" value="Male" id="Male" name="gender" />Male
+                            <Form.Check type="radio" value="Female" id="Female" name="gender" />Female
+                        </Form.Group>
                     </Row>
 
 
