@@ -9,47 +9,38 @@ export default function StudentPage() {
         <>
             <div className="content">
                 <Alert variant="info" style={{ width: "100%", padding: "10px" }}>
-                    <FaBookReader size="20" />Add student
+                    <FaBookReader size="20" />Add Student
                 </Alert>
                 <Form>
+                    <caption>Student informations</caption>
                     <Row>
                         <Form.Group as={Col} controlId="Fn" md="2">
                             <Form.Label>First Name</Form.Label>
-                            <Form.Control type="text" placeholder="First name" />
+                            <Form.Control type="text" />
                         </Form.Group>
                         <Form.Group as={Col} controlId="Mn" md="2">
                             <Form.Label>Middle Name</Form.Label>
-                            <Form.Control type="text" placeholder="Middle name" />
+                            <Form.Control type="text" />
                         </Form.Group>
                         <Form.Group as={Col} controlId="Ln" md="2">
                             <Form.Label>Last Name</Form.Label>
-                            <Form.Control type="text" placeholder="Last name" />
+                            <Form.Control type="text" />
                         </Form.Group>
-                        <Form.Group as={Col} controlId="gender" >
-                            <p>Gender</p>
-                            {['radio'].map(type =>
-                                <>
-                                    <Form.Check
-                                        custom
-                                        id={`custom-inline-radio-${type}-1`}
-                                        inline
-                                        label="Male"
-                                        name="gender"
-                                        type={type}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        id={`custom-inline-radio-${type}-2`}
-                                        inline
-                                        label="Female"
-                                        name="gender"
-                                        type={type}
-                                    />
-                                </>
-
-                            )}
+                        <Form.Group as={Col} controlId="gender" md="2">
+                            <Form.Label>Gender</Form.Label>
+                            <Form.Control as="select">
+                                <option value disabled>Gender</option>
+                                <option>Male</option>
+                                <option>Female</option>
+                            </Form.Control>
                         </Form.Group>
+                        <Col>
+                            <Form.Group controlId="studentImage">
+                                <Form.Label>Upload student image</Form.Label>
+                                <Form.Control type="file" />
+                            </Form.Group>
 
+                        </Col>
                     </Row>
 
 
@@ -78,26 +69,62 @@ export default function StudentPage() {
                                 <option>Sale and commercial relations</option>
                             </Form.Control>
                         </Form.Group>
-                        <Form.Group controlId="address">
+                        <Form.Group controlId="address" md="3">
                             <Form.Label>Address</Form.Label>
-                            <Form.Control type="text" placeholder="Address" />
+                            <Form.Control type="text" />
                         </Form.Group>
-                        <Form.Group controlId="email">
+                        <Form.Group controlId="email" md="3">
                             <Form.Label>E-mail</Form.Label>
-                            <Form.Control type="email" placeholder="E-mail" />
+                            <Form.Control type="email" />
                         </Form.Group>
 
-                        <Form.Group as={Col} controlId="birthday" md="2">
+                        <Form.Group as={Col} controlId="birthday" md="3">
                             <Form.Label>Date of birth</Form.Label>
                             <Form.Control type="date" />
                         </Form.Group>
                     </Row>
 
 
-                    <input type="submit" value="Add student" className="btn-success" />
 
+                    <caption>Parents informations</caption>
+                    <Row>
+                        <Form.Group as={Col} controlId="fatherName" md="2">
+                            <Form.Label>Father Name</Form.Label>
+                            <Form.Control type="text" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="motherName" md="2">
+                            <Form.Label>Mother Name</Form.Label>
+                            <Form.Control type="text" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="fatherOccupation" md="2">
+                            <Form.Label>Father Occupation</Form.Label>
+                            <Form.Control type="text" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="MotherOccupation" md="2">
+                            <Form.Label>Mother Occupation</Form.Label>
+                            <Form.Control type="text" />
+                        </Form.Group>
+                    </Row>
+                    <Row>
+                        <Form.Group as={Col} controlId="phoneNumber" md="2">
+                            <Form.Label>Phone Number</Form.Label>
+                            <Form.Control type="text" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="nationality" md="2">
+                            <Form.Label>Nationality</Form.Label>
+                            <Form.Control type="text" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="presentAddress" md="2">
+                            <Form.Label>Present Address</Form.Label>
+                            <Form.Control type="text" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="permanentAddress" md="2">
+                            <Form.Label>Permanent Address</Form.Label>
+                            <Form.Control type="text" />
+                        </Form.Group>
+                    </Row>
                 </Form>
-
+                <input type="submit" value="Add student" className="btn-success" />
             </div>
 
 
