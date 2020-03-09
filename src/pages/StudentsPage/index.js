@@ -1,5 +1,5 @@
 import React from "react";
-import { Form, Alert } from "react-bootstrap";
+import { Form, Row, Col, Alert } from "react-bootstrap";
 //importing icons
 import { Icon } from "react-icons-kit";
 //student icon
@@ -11,13 +11,27 @@ export default function StudentPage() {
                 <Alert variant="info" style={{ width: "100%", padding: "10px" }}>
                     Add student<Icon icon={u1F466} size="40" />
                 </Alert>
-                <form>
-                    <input type="text" placeholder="First name" />
-                    <input type="text" placeholder="Middle name" />
-                    <input type="text" placeholder="Last name" />
+                <Form>
+                    <Row>
+                        <Form.Group as={Col} controlId="Fn">
+                            <Form.Label for="Fn">First Name</Form.Label>
+                            <Form.Control type="text" placeholder="First name" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="Mn">
+                            <Form.Label for="Mn">Middle Name</Form.Label>
+                            <Form.Control type="text" placeholder="Middle name" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="Ln">
+                            <Form.Label for="Ln">Last Name</Form.Label>
+                            <Form.Control type="text" placeholder="Last name" />
+                        </Form.Group>
+                    </Row>
+
+
+
                     <input type="submit" value="Add student" className="btn-success" />
 
-                </form>
+                </Form>
 
             </div>
 
