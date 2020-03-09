@@ -1,6 +1,7 @@
 import React from "react";
 import { Alert } from "react-bootstrap";
 import "./index.css";
+import { NavLink } from "react-router-dom";
 //student icon
 import { FaBookReader } from 'react-icons/fa';
 //teacher icon
@@ -28,7 +29,7 @@ export default function HomePage() {
                         Total parents<FaUserAlt size="40" />
                     </Alert>
                 </div>
-
+                <NavLink to="/Students" className="nav-link"><strong>Students</strong><FaBookReader size="40" /></NavLink>
             </div>
         </>
     );
