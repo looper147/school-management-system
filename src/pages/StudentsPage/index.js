@@ -9,54 +9,36 @@ export default function StudentPage() {
         <>
             <div className="content">
                 <Alert variant="info" style={{ width: "100%", padding: "10px" }}>
-                    Add student <FaBookReader size="20" />
+                    <FaBookReader size="20" />Add student
                 </Alert>
                 <Form>
                     <Row>
                         <Form.Group as={Col} controlId="Fn">
-                            <Form.Label for="Fn">First Name</Form.Label>
+                            <Form.Label>First Name</Form.Label>
                             <Form.Control type="text" placeholder="First name" />
                         </Form.Group>
                         <Form.Group as={Col} controlId="Mn">
-                            <Form.Label for="Mn">Middle Name</Form.Label>
+                            <Form.Label>Middle Name</Form.Label>
                             <Form.Control type="text" placeholder="Middle name" />
                         </Form.Group>
                         <Form.Group as={Col} controlId="Ln">
-                            <Form.Label for="Ln">Last Name</Form.Label>
+                            <Form.Label>Last Name</Form.Label>
                             <Form.Control type="text" placeholder="Last name" />
                         </Form.Group>
-                        <Form.Group as={Col} controlId="birthdate">
-                            <Form.Label for="birthdate">Date of birth</Form.Label>
+                        <Form.Group as={Col} controlId="birthday">
+                            <Form.Label>Date of birth</Form.Label>
                             <Form.Control type="date" />
                         </Form.Group>
-                        <Form.Group as={Col} controlId="gender">
-                            <p>Gender</p>
-                            {['radio'].map(type =>
-                                <>
-                                    <Form.Check
-                                        custom
-                                        id={`custom-inline-radio-${type}-1`}
-                                        inline
-                                        label="Male"
-                                        name="gender"
-                                        type={type}
-                                    />
-                                    <Form.Check
-                                        custom
-                                        id={`custom-inline-radio-${type}-2`}
-                                        inline
-                                        label="Female"
-                                        name="gender"
-                                        type={type}
-                                    />
-                                </>
-                            )}
 
-                        </Form.Group>
-                        <Form.Group as={Col} controlId="class">
-                            <Form.Label for="class">Class</Form.Label>
+                    </Row>
+
+
+                    <Row>
+
+                        <Form.Group as={Col} controlId="class" md="4">
+                            <Form.Label>Class</Form.Label>
                             <Form.Control as="select">
-                                <option selected disabled>Select class</option>
+                                <option default value disabled>Select class</option>
                                 <option>Accounting and informatics</option>
                                 <option>Assistant Accountant</option>
                                 <option>Building electrician</option>
@@ -77,11 +59,39 @@ export default function StudentPage() {
                             </Form.Control>
                         </Form.Group>
                         <Form.Group controlId="address">
-                            <Form.Label for="address">Address</Form.Label>
+                            <Form.Label>Address</Form.Label>
                             <Form.Control type="text" placeholder="Address" />
                         </Form.Group>
-                    </Row>
+                        <Form.Group controlId="email">
+                            <Form.Label>E-mail</Form.Label>
+                            <Form.Control type="email" placeholder="E-mail" />
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="gender" >
+                            <p>Gender</p>
+                            {['radio'].map(type =>
+                                <>
+                                    <Form.Check
+                                        custom
+                                        id={`custom-inline-radio-${type}-1`}
+                                        inline
+                                        label="Male"
+                                        name="gender"
+                                        type={type}
+                                    />
+                                    <Form.Check
+                                        custom
+                                        id={`custom-inline-radio-${type}-2`}
+                                        inline
+                                        label="Female"
+                                        name="gender"
+                                        type={type}
+                                    />
+                                </>
 
+                            )}
+                        </Form.Group>
+
+                    </Row>
 
 
                     <input type="submit" value="Add student" className="btn-success" />
