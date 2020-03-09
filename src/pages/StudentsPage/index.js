@@ -30,9 +30,55 @@ export default function StudentPage() {
                             <Form.Control type="date" />
                         </Form.Group>
                         <Form.Group as={Col} controlId="gender">
-                            <Form.Label>Gender</Form.Label>
-                            <Form.Check type="radio" value="Male" id="Male" name="gender" />Male
-                            <Form.Check type="radio" value="Female" id="Female" name="gender" />Female
+                            <p>Gender</p>
+                            {['radio'].map(type =>
+                                <>
+                                    <Form.Check
+                                        custom
+                                        id={`custom-inline-radio-${type}-1`}
+                                        inline
+                                        label="Male"
+                                        name="gender"
+                                        type={type}
+                                    />
+                                    <Form.Check
+                                        custom
+                                        id={`custom-inline-radio-${type}-2`}
+                                        inline
+                                        label="Female"
+                                        name="gender"
+                                        type={type}
+                                    />
+                                </>
+                            )}
+
+                        </Form.Group>
+                        <Form.Group as={Col} controlId="class">
+                            <Form.Label for="class">Class</Form.Label>
+                            <Form.Control as="select">
+                                <option selected disabled>Select class</option>
+                                <option>Accounting and informatics</option>
+                                <option>Assistant Accountant</option>
+                                <option>Building electrician</option>
+                                <option>Car mechanics</option>
+                                <option>Child care</option>
+                                <option>Cook</option>
+                                <option>Computer programming and development</option>
+                                <option>Decor</option>
+                                <option>Electronics</option>
+                                <option>General electricity</option>
+                                <option>Graphic design</option>
+                                <option>Heating,ventilating and air conditioning</option>
+                                <option>Health observer</option>
+                                <option>Hotel</option>
+                                <option>Nurse</option>
+                                <option>Nurse aide</option>
+                                <option>Sale and commercial relations</option>
+                            </Form.Control>
+                        </Form.Group>
+                        <Form.Group controlId="address">
+                            <Form.Label for="address">Address</Form.Label>
+                            <Form.Control type="text" placeholder="Address" />
                         </Form.Group>
                     </Row>
 
