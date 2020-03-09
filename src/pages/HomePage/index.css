@@ -6,3 +6,13 @@
 .homeAlerts {
   display: flex;
 }
+.teacherIcon,
+.teacherLink {
+  color: #721d24;
+  opacity: 0.9;
+}
+.teacherIcon,
+.teacherLink:hover {
+  color: #721d24;
+  opacity: 1;
+}

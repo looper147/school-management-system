@@ -1,7 +1,5 @@
 import React from "react";
 import { Form, Row, Col, Alert } from "react-bootstrap";
-//importing icons
-import { Icon } from "react-icons-kit";
 //student icon
 import { FaBookReader } from 'react-icons/fa';
 export default function StudentPage() {
@@ -124,7 +122,7 @@ export default function StudentPage() {
                         </Form.Group>
                     </Row>
                 </Form>
-                <input type="submit" value="Add student" className="btn-success" />
+                <input type="submit" value="Add Student" className="btn-success" />
             </div>
 
 
