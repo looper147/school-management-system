@@ -2,14 +2,12 @@ import React from "react";
 import "./sidebar.css";
 import { NavLink } from "react-router-dom";
 import { Navbar, Nav, NavItem } from "react-bootstrap";
-//importing icons
-import { Icon } from "react-icons-kit";
 //home icon
-import { home } from "react-icons-kit/icomoon/home";
+import { FaHome } from "react-icons/fa";
 //student icon
-import { u1F466 } from 'react-icons-kit/noto_emoji_regular/u1F466';
+import { FaBookReader } from 'react-icons/fa';
 //teacher icon
-import { userTie } from 'react-icons-kit/icomoon/userTie'
+import { FaUserTie } from 'react-icons/fa';
 import { NavbarBrand } from "react-bootstrap";
 export default function Sidebar() {
   return (
@@ -19,9 +17,9 @@ export default function Sidebar() {
 
           <Nav>
             <NavbarBrand>School</NavbarBrand>
-            <NavItem><NavLink exact to="/" className="nav-link"><Icon icon={home} size="25" /><br />Home</NavLink></NavItem>
-            <NavItem><NavLink to="/Students" className="nav-link danger"><Icon icon={u1F466} size="30" /><br />Students</NavLink></NavItem>
-            <NavItem><NavLink to="/Teachers" className="nav-link"><Icon icon={userTie} size="25" /><br />Teachers</NavLink></NavItem>
+            <NavItem><NavLink exact to="/" className="nav-link"><FaHome /><br />Home</NavLink></NavItem>
+            <NavItem><NavLink to="/Students" className="nav-link danger"><FaBookReader /><br />Students</NavLink></NavItem>
+            <NavItem><NavLink to="/Teachers" className="nav-link"><FaUserTie /><br />Teachers</NavLink></NavItem>
           </Nav>
         </Navbar>
 
