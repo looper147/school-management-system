@@ -14,7 +14,6 @@ export default function Sidebar() {
     <>
       <div className="sideBar">
         <Navbar expand="" variant="dark">
-
           <Nav>
             <NavbarBrand>School</NavbarBrand>
             <NavItem><NavLink exact to="/" className="nav-link"><FaHome /><br />Home</NavLink></NavItem>
