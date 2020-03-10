@@ -9,22 +9,37 @@ function FormInput(props) {
     return (
         <Form.Group as={Col} controlId={props.label} md="2">
             <Form.Label>{props.label}</Form.Label>
-            <Form.Control type={props.type} />
+            <Form.Control type={props.type} onChange={props.onChange} value={props.value} />
         </Form.Group>
     )
 
 }
 function AddStudentForm() {
+    const [firstName, setFirstName] = useState('');
+    const [middleName, setMiddleName] = useState('');
+
+    const handleFirstNameChange = (event) => {
+        const firstName = event.target.value;
+        setFirstName(firstName);
+    }
+    const handleMiddleNameChange = (event) => {
+        const middleName = event.target.value;
+        setMiddleName(middleName)
+    }
+    const handleFormSubmit = (event) => {
+        alert(`${firstName} ${middleName}`);
+        event.preventDefault();
+    }
     return (
         <>
-            <Alert variant="info" style={{ width: "100%", padding: "10px" }}>
+            <Alert variant="info" style={{ width: "80%", padding: "10px" }}>
                 <FaBookReader size="20" />Add Student
                 </Alert>
-            <Form>
-                <caption>Student informations</caption>
+            <Form onSubmit={handleFormSubmit}>
+                <h4>Student informations</h4>
                 <Row>
-                    <FormInput label="First Name" type="text" />
-                    <FormInput label="Middle Name" type="text" />
+                    <FormInput label="First Name" type="text" onChange={handleFirstNameChange} />
+                    <FormInput label="Middle Name" type="text" onChange={handleMiddleNameChange} />
                     <FormInput label="Last Name" type="text" />
                     <Form.Group as={Col} controlId="gender" md="2">
                         <Form.Label>Gender</Form.Label>
@@ -34,9 +49,6 @@ function AddStudentForm() {
                             <option>Female</option>
                         </Form.Control>
                     </Form.Group>
-                    <FormInput label="Upload student's photo" type="file" />
-                </Row>
-                <Row>
                     <Form.Group as={Col} controlId="class" md="3">
                         <Form.Label>Class</Form.Label>
                         <Form.Control as="select">
@@ -60,11 +72,13 @@ function AddStudentForm() {
                             <option>Sale and commercial relations</option>
                         </Form.Control>
                     </Form.Group>
+                </Row>
+                <Row>
                     <FormInput label="Address" type="text" />
                     <FormInput label="E-mail" type="email" />
                     <FormInput label="Date of birth" type="date" />
                 </Row>
-                <caption>Parents informations</caption>
+                <h4>Parents informations</h4>
                 <Row>
                     <FormInput label="Father Name" type="text" />
                     <FormInput label="Mother Name" type="text" />
@@ -77,8 +91,10 @@ function AddStudentForm() {
                     <FormInput label="Present Address" type="text" />
                     <FormInput label="Permanent Address" type="text" />
                 </Row>
+
+                <input type="submit" value="Add Student" className="btn-success" />
             </Form>
-            <input type="submit" value="Add Student" className="btn-success" />
+
         </>)
 }
 export default function StudentPage() {

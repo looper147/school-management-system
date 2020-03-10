@@ -15,11 +15,11 @@ function FormInput(props) {
 function AddTeacherForm() {
     return (
         <>
-            <Alert variant="info" style={{ width: "100%", padding: "10px" }}>
+            <Alert variant="info" style={{ width: "80%", padding: "10px" }}>
                 <FaUserTie size="20" />Add Teacher
             </Alert>
             <Form>
-                <caption>Teacher informations</caption>
+                <h4>Teacher informations</h4>
                 <Row>
                     <FormInput label="First Name" type="text" />
                     <FormInput label="Last Name" type="text" />
@@ -85,8 +85,6 @@ function AddTeacherForm() {
                 <Row>
                     <FormInput label="E-mail" type="email" />
                     <FormInput label="Address" type="text" />
-                    <FormInput label="Upload teacher's photo" type="file" />
-
                 </Row>
             </Form>
             <input type="submit" className="btn-success" value="Add Teacher" /></>

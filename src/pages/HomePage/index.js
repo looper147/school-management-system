@@ -29,8 +29,8 @@ export default function HomePage() {
                         Total Parents<FaUserAlt size="40" />
                     </Alert>
                 </div>
-                <NavLink to="/Students" className="nav-link"><h4>Students</h4><FaBookReader size="60" /></NavLink>
-                <NavLink to="/Teachers" className="nav-link teacherLink" ><h4>Teachers</h4><FaUserTie size="60" className="teacherIcon" /></NavLink>
+                <NavLink to="/Students"><h4>Students</h4><FaBookReader size="60" /></NavLink>
+                <NavLink to="/Teachers" className="teacherLink" ><h4>Teachers</h4><FaUserTie size="60" className="teacherIcon" /></NavLink>
             </div>
         </>
     );
